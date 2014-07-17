@@ -142,7 +142,7 @@ module Xeroizer
           request = to_xml
           log "[CREATE SENT] (#{__FILE__}:#{__LINE__}) #{request}"
           
-          response = parent.send(parent.create_method, request)
+          response = parent.http_put(request)
           log "[CREATE RECEIVED] (#{__FILE__}:#{__LINE__}) #{response}"
           
           parse_save_response(response)
